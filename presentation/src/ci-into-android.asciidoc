@@ -1,0 +1,73 @@
+= Introduction to Continuous Integration for Android Developers
+:author:    Manfred Moser, simpligility technologies inc.
+:backend:   slidy
+:max-width: 45em
+:data-uri:
+:icons:
+:toc!:
+:slidetitleindentcar: 
+:copyright: Copyright 2013, simpligility technologies inc., All Rights Reserved.
+
+
+== About Manfred Moser
+
+* Author of The Hudson Book
+
+* Open source project manager ksoap2-android, Android Maven Plugin 
+
+* Presenter at various conferences AnDevCon, OSCON, JUC, ... 
+
+* Founder of VIJUG and GDG Victoria BC
+
+* Owner http://www.simpligility.com[simpligility technologies inc.]
+
+== Objectives
+
+* Understand the benefits of using a continuous integration servers
+
+* Options for deployment
+
+* Glance at different available CI servers and services
+
+
+
+== What is a CI server? 
+
+Just CRON with a user interface
+
+== What is a CI server? 
+
+A relentless worker as another member of your team
+
+== What is a CI server? 
+
+Server running your builds and more
+
+== What is a CI server? - really now!
+
+All of the 
+
+
+== Sonatype Nexus as Center Hub
+
+image::images/nexus-tool-suite-integration.png[scale=100]
+
+-> Nexus will be a key component of your enterprise development
+  infrastructure
+
+
+
+
+== Useful Links
+
+* http://www.sonatype.com/Support/Videos[Screen cast recordings]
+
+* http://links.sonatype.com/products/nexus/oss/docs[Repository Management with Nexus]
+
+* http://www.sonatype.org/nexus/participate[Mailing lists]
+
+* https://links.sonatype.com/products/nexus/community-chat[Talk to the developers/support - HipChat]
+
+* http://www.sonatype.com/Services/Training[Training classes]
+
+
