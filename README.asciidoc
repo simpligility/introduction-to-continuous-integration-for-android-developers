@@ -1,0 +1,30 @@
+== Introduction to Continuous Integration For Android Developers
+
+Created by Manfred Moser of http://www.simpligility.com[simpligility
+technologies inc] 
+
+Presented at AnDevCon 5 in Boston, May 2013
+
+=== Tips for using
+
+The html file in the root folder is all you need to show the
+presentation.
+
+Just download the repo with git clone or as zip/tar.gz
+
+=== Modifications
+
+If you need to modify and rebuild the slides, modify the
+
+----
+presentation/src/nexus-presentation.asciidoc
+----
+
+and run
+
+----
+cd presentation
+./generate.sh 
+----
+
+asciidoc with slidy backend install required.
