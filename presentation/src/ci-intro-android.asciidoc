@@ -11,6 +11,8 @@
 
 == About Manfred Moser
 
+* Long time CI user and administrator
+
 * Author of The Hudson Book
 
 * Open source project manager ksoap2-android, Android Maven Plugin 
@@ -29,6 +31,9 @@
 
 * Glance at different available CI servers and services
 
+* Getting started 
+
+* Android specific considerations
 
 
 == What is a CI server? 
@@ -41,26 +46,133 @@ A relentless worker as another member of your team
 
 == What is a CI server? 
 
-Server running your builds and more
+Server running your builds
+
+== What is a CI server? 
+
+A communication tool for the development team and beyond
+
 
 == What is a CI server? - really now!
 
-All of the 
+Everything I mentioned so far and more!
+
+-> A cenrtral piece of your development infrastructure
 
 
 
 
+== Core Features
 
-== Useful Links
+- version control integration
 
-* http://www.sonatype.com/Support/Videos[Screen cast recordings]
+- scheduling
 
-* http://links.sonatype.com/products/nexus/oss/docs[Repository Management with Nexus]
+- build tool and script integration
 
-* http://www.sonatype.org/nexus/participate[Mailing lists]
+- communication features
 
-* https://links.sonatype.com/products/nexus/community-chat[Talk to the developers/support - HipChat]
+- expandability
 
-* http://www.sonatype.com/Services/Training[Training classes]
+== Deployment Options - One or Many?
 
+- One server
+
+- Cluster
+
+== Deployment Options - Hardware or VM?
+
+
+== Deployment Options - Operating Systems? 
+
+- 
+
+
+== Deployment Options - Provisioning?
+
+- 
+
+== Deployment Options - Scalability?
+
+on demand start up of VM
+
+
+
+
+== Deployment Options
+
+- computer under the desk in local network
+
+- VM 
+
+- VM in Cloud
+
+- Mixture of 
+
+
+== Different CI Servers
+
+Lots of them available
+
+- open source
+
+- commercial
+
+- SAAS
+
+
+== Eclipse Hudson
+
+http://www.hudson-ci.org
+
+- Top level project of the Eclipse Foundation
+
+- Backed by Oracle and used in their cloud offering
+
+- Open source under the Eclipse Public License
+
+
+== Jenkins
+
+http://www.jenkins-ci.org
+
+- Open source and commercial version
+
+- Backed by Cloudbees
+
+- 
+
+== Travis CI
+
+https://travis-ci.org
+
+- SAAS
+
+- Great github integraton
+
+== Atlassian Bamboo
+
+== Many Others
+
+- JetBrains TeamCity
+
+- Cruise Control
+
+- MS TFS
+
+- ...
+
+
+
+
+== More Links
+
+
+
+
+== Whats Next? 
+
+- Fireside chat
+
+- Enterprise tooling presentation
 
