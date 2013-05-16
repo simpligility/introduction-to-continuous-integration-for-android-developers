@@ -1,0 +1,30 @@
+body {
+    font-family: "myriad-pro-1","myriad-pro-2",Arial,Geneva,sans-serif;
+}
+
+div.slide div.sect1 h1, div.slide div.sect2 h1, div.slide div.sect3 h1 {
+  color: #3399CC;
+  text-align: right;
+  width: 100%;
+  background-color: #000000;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-repeat: no-repeat;
+  background-position: 20px 20px;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+div.listingblock {
+  border: 1px solid black;
+  -moz-box-shadow: 3px 3px 4px #000;
+  -webkit-box-shadow: 3px 3px 4px #000;
+  box-shadow: 3px 3px 4px #000;
+  background-color: #A9F5F2;
+  font-size: 12pt;
+  padding-right: 10px;
+  padding-left: 10px;
+  line-height: 105%;
+  margin-bottom: 20px;
+}
