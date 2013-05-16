@@ -51,7 +51,6 @@ All of the
 
 
 
-
 == Useful Links
 
 * http://www.sonatype.com/Support/Videos[Screen cast recordings]
