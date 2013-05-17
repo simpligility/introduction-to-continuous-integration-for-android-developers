@@ -90,7 +90,14 @@ Everything I mentioned so far and more!
 
 == Deployment Options - Provisioning?
 
-- 
+How do I get all the tools needed to all the CI servers? 
+
+- Tools built into CI servers
+
+- VM's and VM snapshots
+
+- Provisioning systems like Puppet or Chef
+
 
 == Deployment Options - Scalability?
 

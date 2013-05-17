@@ -1,12 +1,17 @@
-body {
-    font-family: "myriad-pro-1","myriad-pro-2",Arial,Geneva,sans-serif;
+div.sect1 h1 {
+    padding-left: 20px;
+    margin-left: -20px;
+    margin-left: -20px;
+    background-color: #ff891c;
+    color: #ffffff;
 }
 
-div.slide div.sect1 h1, div.slide div.sect2 h1, div.slide div.sect3 h1 {
+
+/*div.slide div.sect1 h1, div.slide div.sect2 h1, div.slide div.sect3 h1 {
   color: #3399CC;
   text-align: right;
   width: 100%;
-  background-color: #000000;
+  background-color: #ff891c;
   padding-right: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -28,3 +33,4 @@ div.listingblock {
   line-height: 105%;
   margin-bottom: 20px;
 }
+*/
