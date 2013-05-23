@@ -141,6 +141,8 @@ http://www.hudson-ci.org
 
 == Jenkins
 
+image::images/jenkins.png[scale=100]
+
 http://www.jenkins-ci.org
 
 - Open source and commercial version
