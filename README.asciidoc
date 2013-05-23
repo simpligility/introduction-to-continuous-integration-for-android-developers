@@ -5,6 +5,37 @@ technologies inc]
 
 Presented at AnDevCon 5 in Boston, May 2013
 
+=== Abstract - Introduction to Continuous Integration Server Usage Focusing on Android Development 
+
+Never heard of Continuous Integration Servers like Hudson, Jenkins,
+CruiseControl or Bamboo? Already using one? Great. You will learn what
+CI servers are out there for you to use and how easy it is to start
+using them. We will look at available services as well as how to run
+your own CI server cluster locally or in the cloud.
+
+With a CI server, you essentially get another team member on your
+development team who never stops working. We will demo how to set up a
+new instance of a CI server on a machine and configure it for your
+usage. Learn how easy it is to build your application, whether you are
+using Ant, Gradle or Maven. We will explore what sort of scheduling
+options are typically available to run your builds, and how it all
+integrates with your version-control system. Once we have a build
+running, we will add some other projects to the mix and build up a
+full pipeline of builds.
+
+Adding executions of unit test runs into the mix will make it more
+interesting. Really cool things start happening when you add devices
+and emulators and run Android instrumentation tests. And maybe you
+will want to take screenshots automatically, or capture logs and test
+results for each build.
+
+With all this happening, we will tie it back to your team by looking
+at notification options and further automations for release and
+distribution of your application. During the whole class, we will
+ensure that you learn many of the best practices of CI server usage in
+general and specifically related to Android application development,
+and walk away with a firm conviction to add a CI server to your team.
+
 === Tips for using
 
 The html file in the root folder is all you need to show the
