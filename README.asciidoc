@@ -17,13 +17,13 @@ Just download the repo with git clone or as zip/tar.gz
 If you need to modify and rebuild the slides, modify the
 
 ----
-presentation/src/nexus-presentation.asciidoc
+src/ci-intro-android.asciidoc
 ----
 
 and run
 
 ----
-cd presentation
+cd src
 ./generate.sh 
 ----
 
