@@ -5,7 +5,7 @@ technologies inc]
 
 Presented at AnDevCon 5 in Boston, May 2013
 
-=== Abstract - Introduction to Continuous Integration Server Usage Focusing on Android Development 
+=== Abstract
 
 Never heard of Continuous Integration Servers like Hudson, Jenkins,
 CruiseControl or Bamboo? Already using one? Great. You will learn what
