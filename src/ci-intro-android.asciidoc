@@ -13,19 +13,19 @@
 
 * Long time CI user and administrator
 
-* Author of The Hudson Book
+* Author of http://wiki.eclipse.org/The_Hudson_Book[The Hudson Book]
 
-* Open source project lead ksoap2-android, Android Maven Plugin 
+* Open source project lead https://code.google.com/p/ksoap2-android/[ksoap2-android], https://code.google.com/p/maven-android-plugin/[Android Maven Plugin]
 
 * Presenter at various conferences AnDevCon, OSCON, JUC, ... 
 
-* Founder of VIJUG and GDG Victoria BC
+* Founder of http://www.mosabuam.com/vijug/blog/[VIJUG] and https://plus.google.com/112826376355061333205/posts[GDG Victoria BC]
 
 * Owner http://www.simpligility.com[simpligility technologies inc.]
 
 == Objectives
 
-* Understand the benefits of using a continuous integration servers
+* Understand the benefits of using a continuous integration
 
 * Consider the options for deployment
 
@@ -44,12 +44,12 @@ A CI server is nothing special - it is just CRON with a user interface.
 == What is a CI server? 
 
 [quote, Anonymous Developer]
-A relentless worker as another member of my team, that works for ME!
+A relentless worker - another member of my team, that works for ME!
 
 == What is a CI server? 
 
 [quote, Anonymous System Administrator] 
-Just a server running your builds
+Just a server running your builds.
 
 == What is a CI server? 
 
@@ -66,15 +66,20 @@ A communication tool for the development and QA teams and beyond.
 [quote, Manfred Moser] 
 Everything mentioned so far and more! A CI
 server/cluster is a central piece of your development
-infrastructure. Once you got used to it, you will never look back.
+infrastructure. Once you got used to having a CI server, you will never look back.
 
 
 == What is Continuous Integration?
 
-A software development practice that evolved in the 
+A *software development* practice
+
+that evolved in the 
 http://www.extremeprogramming.org/[Extreme Programming (XP)] 
-community starting about 1999 and first mentioned by
-Martin Fowler and Kent Beck.
+community 
+
+starting *about 1999*
+
+and first mentioned by Martin Fowler and Kent Beck.
 
 
 == What is Continuous Integration? 
@@ -92,7 +97,7 @@ Full article is on
 http://www.martinfowler.com/articles/continuousIntegration.html[Martin
 Fowlers web site]
 
-== Practices of Continuous Integration
+== Practices of Continuous Integration - Part 1
 
 According to Martin Fowler...
 
@@ -106,6 +111,8 @@ According to Martin Fowler...
 
 * Every Commit Should Build the Mainline on an Integration Machine
 
+== Practices of Continuous Integration - Part 1
+
 * Keep the Build Fast
 
 * Test in a Clone of the Production Environment
@@ -116,11 +123,12 @@ According to Martin Fowler...
 
 * Automate Deployment
 
-This should give you a good idea about what to AIM for!
+IMPORTANT: This should give you a good idea about what to AIM for! Let's discuss
+this in detail...
 
 == Continuous Delivery
 
-Continuous integration taken to the next level: 
+Continuous integration taken to the next level::
 
 * software is always in a state suitable for production deployment
 
@@ -128,15 +136,15 @@ Continuous integration taken to the next level:
 
 == Core Features of Continuous Integration Platforms
 
-* version control system integration
+* Version control system integration
 
-* scheduling
+* Scheduling
 
-* build tool and script integration
+* Build tool and script integration
 
-* communication features
+* Communication features
 
-* expandability
+* Ideally expandability
 
 == Benefits
 
@@ -152,13 +160,26 @@ Continuous integration taken to the next level:
 
 * Reduces the number of defects and raises quality of your software
 
+== Use Cases Beyond Software Builds
+
+
+There are a *lot* of different use cases for CI platforms beyond
+build software applications, so expandability is key! 
+
+* building and publishing a book or a website
+
+* orchestrating home automation
+
+* running backups
+
+
 == Deployment Options - Operating Systems? 
 
 For Android development you have many options, but ..
 
-* Are you also building IOS apps? 
+* Are you also building iOS apps? 
 
-* Is production running on Linux? 
+* Is the production environment for e.g. the backend servers running on Linux? 
 
 * Do you need to verify it works on Windows?
 
@@ -172,23 +193,48 @@ For Android development you have many options, but ..
 
 -> In most enterprises one server will not be sufficient
 
-
-
 == Deployment Options - Hardware or VM?
 
+Hardware::
 
+* more hazzle to look after and get started
 
+* allows you to attache physical devices
+
+* sort of required for some build (e.g. iOS)
+
+VM::
+
+* easy to start and stop
+
+* possible with different OS
+
+* easier to scale
 
 
 == Deployment Options - Provisioning?
 
 How do I get all the tools needed to all the CI servers? 
 
-- Tools built into CI servers
+* Tools built into CI servers (e.g. Maven download install in Hudson)
 
-- VM's and VM snapshots
+* VM's and VM snapshots
 
-- Provisioning systems like Puppet or Chef
+* Provisioning systems like https://puppetlabs.com/[Puppet] , 
+  http://www.opscode.com/chef/[Chef] or http://cfengine.com/[CFEngine]
+
+* Package management system of operating system directly (apt-get, yum...)
+
+- Manual install on each machine .. painful after a while
+
+
+image::images/puppet.png[scale=100]
+
+
+image::images/chef.png[scale=100]
+
+
+image::images/cfengine.png[scale=100]
 
 
 == Deployment Options - Scalability?
@@ -222,6 +268,8 @@ Lots of them available
 
 == Eclipse Hudson
 
+image::images/hudson.png[scale=100]
+
 http://www.hudson-ci.org
 
 - Top level project of the Eclipse Foundation
@@ -253,17 +301,63 @@ https://travis-ci.org
 
 - Great github integraton
 
-== Atlassian Bamboo
+== Others CI Servers
 
-== Many Others
+image::images/bamboo.png[scale=100]
 
-- JetBrains TeamCity
+* http://www.atlassian.com/software/bamboo/overview[Atlassian Bamboo]
 
-- Cruise Control
+** great integration with other Atlassian products like JIRA
 
-- MS TFS
+** good Amazon EC 2 support 
 
-- ...
+** self hosted or SAAS available
+
+image::images/teamcity.png[scale=100]
+
+* http://www.jetbrains.com/teamcity/[JetBrains TeamCity]
+
+** from the makers of IntelliJ IDEA/Android Studio 
+
+** integration with YouTrack
+
+** free for up to 20 builds 
+
+== Others CI Servers - continued
+
+* http://msdn.microsoft.com/en-us/vstudio/ff637362.aspx[MS Team
+  Foundation Server]
+
+** don't know much about it, strong .Net and MS tooling focus
+
+* http://cruisecontrol.sourceforge.net/[Cruise Control]
+
+** old and outdated
+
+* http://www.thoughtworks-studios.com/go-continuous-delivery[ThoughWorks
+  Go]
+
+** focus towards continuous delivery
+
+** community edition
+
+* ...
+
+NOTE: There are many more available, often as part of enterprise tools
+under the Application Lifecycle Management ALM term
+
+== How to Select Your CI Server Platform
+
+* consider your needs beyond Android application
+
+* try them out, most have open source or free trial or community
+  editions
+
+* consider what other tools like issue trackers you already use
+
+NOTE: There are a lot of choices available. Just check out this
+http://confluence.public.thoughtworks.org/display/CC/CI+Feature+Matrix[comparison
+matrix]. But don't worry too much just get started.. 
 
 == Building Applications 
 
@@ -281,11 +375,11 @@ You can build Android applications in a couple of ways...
 
 - make for NDK apps, combined with above
 
-- 
-
 - Custom script 
 
-
+WARNING: Be careful not to rely too much on the configuration in a
+specific CI server, that makes switching or running build on other
+machines more difficult. 
 
 == Provisioning Android SDK
 
@@ -300,16 +394,33 @@ You can build Android applications in a couple of ways...
 
 == Testing Applications
 
-On the JVM: 
+On the JVM::
 
 * Plain unit tests
 
 * Tests with mocked Android classes Robolectric
 
 
-On Dalvik VM / Android
+On Dalvik VM / Android::
 
 * Integration/Instrumentation tests - Robotium
+
+
+SDK Tools::
+
+* Instrumentation tests
+
+* MonkeyRunner
+
+* Monkey
+
+* UI Automator
+
+NOTE: There are dedicated in the cloud test setups available,
+e.g. http://testdroid.com/[TestDroid from Bitbar]
+
+
+https://github.com/square/spoon
 
 
 
@@ -334,13 +445,28 @@ TIP: Android Maven Plugin can run tests on all attached devices
 
 
 
-== Analysis 
+== Analysis - Overview
 
-Stephane Nicolas project
+There are *lots* of different tools available.
 
-Sonar
+Java/Generic::
 
-Checkstyle, PMD... 
+* Checkstyle
+
+* PMD
+
+* Findbugs
+
+* Sonar
+
+Android Specific::
+
+* Lint
+
+
+
+TIP:  Stephane Nicolas has a great sample project set up at https://github.com/stephanenicolas/Quality-Tools-for-Android
+
 
 == Android Continuous Deployment
 
@@ -358,6 +484,8 @@ To stores::
 * Ideally stores would have a management API - I talked to the Play
   Store team at Google IO, they want to get there, we need to push them!
 
+WARNING: I strongly recommend to adapt the frequency of deployments
+suitable to your users!
 
 == More Links
 
@@ -365,10 +493,8 @@ To stores::
 
 * http://en.wikipedia.org/wiki/Continuous_delivery[Wikipedia article about Continuous Delivery]
 
+== Summary
 
-== Whats Next? 
+Continuous integration usage is easy and essential!
 
-- Fireside chat
-
-- Enterprise tooling presentation
-
+Get on with it!
