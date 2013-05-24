@@ -378,7 +378,7 @@ You can build Android applications in a couple of ways...
 - Custom script 
 
 WARNING: Be careful not to rely too much on the configuration in a
-specific CI server, that makes switching or running build on other
+specific CI server, that makes switching CI platform and running builds on other
 machines more difficult. 
 
 == Provisioning Android SDK
@@ -441,9 +441,17 @@ Emulator::
 
 * With hardware acceleration faster
 
-TIP: Android Maven Plugin can run tests on all attached devices
+TIP: Android Maven Plugin can run tests on all attached devices and
+the Jenkins Android Emulator Plugin can create, start and stop them
 
+== Android Instrumentation Testing
 
+* Emulates a user and needs a emulator or device
+
+* Is slower.. 
+
+* Android Maven Plugin creates junit compatible test results per
+  device!
 
 == Analysis - Overview
 
@@ -464,9 +472,26 @@ Android Specific::
 * Lint
 
 
+TIP:  Stephane Nicolas has a great sample project set up at
+https://github.com/stephanenicolas/Quality-Tools-for-Android with lots
+more tools
 
-TIP:  Stephane Nicolas has a great sample project set up at https://github.com/stephanenicolas/Quality-Tools-for-Android
 
+== Android Lint
+
+Execute lint with
+
+* command line execution 
+
+* custom exec from build system like Gradle
+
+* dedicated goal in Android Maven Plugin
+
+and then
+
+* archive the reports per build
+
+* create them in html format so users can investigate easily
 
 == Android Continuous Deployment
 

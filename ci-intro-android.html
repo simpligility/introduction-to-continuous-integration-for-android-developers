@@ -7389,7 +7389,6 @@ Any of the above invoked from script
 <li>
 <span>
 make for NDK apps, combined with above
-sdfsdf
 </span>
 </li>
 <li>
@@ -7461,7 +7460,7 @@ vr6+wTfK/4tEfzeeMmUKkydPzhg8jJAAREgEg0H6+vrQNC2pFL8ZUVWVrKws8vPzycnJQVXVjH/s
 /F/lgJiyQFHragAAAABJRU5ErkJggg==" />
 </td>
 <td class="content">Be careful not to rely too much on the configuration in a
-specific CI server, that makes switching or running build on other
+specific CI server, that makes switching CI platform and running builds on other
 machines more difficult.</td>
 </tr></table>
 </div>
@@ -7700,9 +7699,33 @@ Pvx+P8FgkGAw+OWfD7gj94RG13U0TSOdTpNOp8lMbmQ0TcvbArrrK1mW8Xg8eL3e7BLB5/N9dSc0
 uSP3jMwwjKy4G3AXwB0ugAsx5YzMndW//DOy3OFMjGwrxrKs7NX9LBfAneFFUcxec6rU5zqpvCqA
 qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </td>
-<td class="content">Android Maven Plugin can run tests on all attached devices</td>
+<td class="content">Android Maven Plugin can run tests on all attached devices and
+the Jenkins Android Emulator Plugin can create, start and stop them</td>
 </tr></table>
 </div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_android_instrumentation_testing">Android Instrumentation Testing</h1>
+<div class="sectionbody" style="max-width:45em">
+<ul class="">
+<li>
+<span>
+Emulates a user and needs a emulator or device
+</span>
+</li>
+<li>
+<span>
+Is slower..
+</span>
+</li>
+<li>
+<span>
+Android Maven Plugin creates junit compatible test results per
+  device!
+</span>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect1 slide">
@@ -7803,9 +7826,47 @@ Pvx+P8FgkGAw+OWfD7gj94RG13U0TSOdTpNOp8lMbmQ0TcvbArrrK1mW8Xg8eL3e7BLB5/N9dSc0
 uSP3jMwwjKy4G3AXwB0ugAsx5YzMndW//DOy3OFMjGwrxrKs7NX9LBfAneFFUcxec6rU5zqpvCqA
 qTCT16/0nPgLA/i6xjf+Xw3+B2ll/uiqTaJTAAAAAElFTkSuQmCC" />
 </td>
-<td class="content">Stephane Nicolas has a great sample project set up at <a href="https://github.com/stephanenicolas/Quality-Tools-for-Android">https://github.com/stephanenicolas/Quality-Tools-for-Android</a></td>
+<td class="content">Stephane Nicolas has a great sample project set up at
+<a href="https://github.com/stephanenicolas/Quality-Tools-for-Android">https://github.com/stephanenicolas/Quality-Tools-for-Android</a> with lots
+more tools</td>
 </tr></table>
 </div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_android_lint">Android Lint</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>Execute lint with</p></div>
+<ul class="">
+<li>
+<span>
+command line execution
+</span>
+</li>
+<li>
+<span>
+custom exec from build system like Gradle
+</span>
+</li>
+<li>
+<span>
+dedicated goal in Android Maven Plugin
+</span>
+</li>
+</ul>
+<div class="paragraph"><p>and then</p></div>
+<ul class="">
+<li>
+<span>
+archive the reports per build
+</span>
+</li>
+<li>
+<span>
+create them in html format so users can investigate easily
+</span>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect1 slide">
