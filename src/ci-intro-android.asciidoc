@@ -1,4 +1,4 @@
-= Introduction to Continuous Integration for Android Developers
+=  Introduction to Continuous Integration Server Usage Focusing on Android Development 
 :author:    Manfred Moser, simpligility technologies inc.
 :backend:   slidy
 :max-width: 45em
@@ -15,7 +15,7 @@
 
 * Author of The Hudson Book
 
-* Open source project manager ksoap2-android, Android Maven Plugin 
+* Open source project lead ksoap2-android, Android Maven Plugin 
 
 * Presenter at various conferences AnDevCon, OSCON, JUC, ... 
 
@@ -27,65 +27,157 @@
 
 * Understand the benefits of using a continuous integration servers
 
-* Options for deployment
+* Consider the options for deployment
 
 * Glance at different available CI servers and services
 
-* Getting started 
+* Get started
 
 * Android specific considerations
 
 
 == What is a CI server? 
 
-Just CRON with a user interface
+[quote, Anonymous System Administrator]
+A CI server is nothing special - it is just CRON with a user interface.
 
 == What is a CI server? 
 
-A relentless worker as another member of your team
+[quote, Anonymous Developer]
+A relentless worker as another member of my team, that works for ME!
 
 == What is a CI server? 
 
-Server running your builds
+[quote, Anonymous System Administrator] 
+Just a server running your builds
 
 == What is a CI server? 
 
-A communication tool for the development team and beyond
+[quote, Anonymous QA developer]
+A great tool saving me from having to run all the tests manually.
 
+== What is a CI server? 
+
+[quote, Anonymous QA Manager]
+A communication tool for the development and QA teams and beyond.
 
 == What is a CI server? - really now!
 
-Everything I mentioned so far and more!
+[quote, Manfred Moser] 
+Everything mentioned so far and more! A CI
+server/cluster is a central piece of your development
+infrastructure. Once you got used to it, you will never look back.
 
--> A cenrtral piece of your development infrastructure
+
+== What is Continuous Integration?
+
+A software development practice that evolved in the 
+http://www.extremeprogramming.org/[Extreme Programming (XP)] 
+community starting about 1999 and first mentioned by
+Martin Fowler and Kent Beck.
 
 
+== What is Continuous Integration? 
 
+[quote, Martin Fowler]
+Continuous Integration is a software development practice where
+members of a team integrate their work frequently, usually each person
+integrates at least daily - leading to multiple integrations
+per day. Each integration is verified by an automated build (including
+test) to detect integration errors as quickly as possible. Many teams
+find that this approach leads to significantly reduced integration
+problems and allows a team to develop cohesive software more rapidly. 
 
-== Core Features
+Full article is on
+http://www.martinfowler.com/articles/continuousIntegration.html[Martin
+Fowlers web site]
 
-- version control integration
+== Practices of Continuous Integration
 
-- scheduling
+According to Martin Fowler...
 
-- build tool and script integration
+* Maintain a Single Source Repository
 
-- communication features
+* Automate the Build
 
-- expandability
+* Make Your Build Self-Testing
+
+* Everyone Commits to the Mainline Every Day
+
+* Every Commit Should Build the Mainline on an Integration Machine
+
+* Keep the Build Fast
+
+* Test in a Clone of the Production Environment
+
+* Make it Easy for Anyone to Get the Latest Executable
+
+* Everyone can see what's happening
+
+* Automate Deployment
+
+This should give you a good idea about what to AIM for!
+
+== Continuous Delivery
+
+Continuous integration taken to the next level: 
+
+* software is always in a state suitable for production deployment
+
+* and is deployed to production regularly (e.g. daily or more often)
+
+== Core Features of Continuous Integration Platforms
+
+* version control system integration
+
+* scheduling
+
+* build tool and script integration
+
+* communication features
+
+* expandability
+
+== Benefits
+
+* Reduces the need for developers and others to manually build
+  software
+
+* Reduces the risk of integrating features, since it is done all the
+  time (no more release deadline crunch!) 
+
+* Automates and codifies how software is built
+
+* Enhances visibility and communication in development, QA and beyond
+
+* Reduces the number of defects and raises quality of your software
+
+== Deployment Options - Operating Systems? 
+
+For Android development you have many options, but ..
+
+* Are you also building IOS apps? 
+
+* Is production running on Linux? 
+
+* Do you need to verify it works on Windows?
+
+-> you might have to use different ones
 
 == Deployment Options - One or Many?
 
-- One server
+- One large server
 
-- Cluster
+- Cluster of one server with multiple smaller slaves
+
+-> In most enterprises one server will not be sufficient
+
+
 
 == Deployment Options - Hardware or VM?
 
 
-== Deployment Options - Operating Systems? 
 
-- 
 
 
 == Deployment Options - Provisioning?
@@ -153,6 +245,8 @@ http://www.jenkins-ci.org
 
 == Travis CI
 
+image::images/travis.png[scale=100]
+
 https://travis-ci.org
 
 - SAAS
@@ -171,12 +265,105 @@ https://travis-ci.org
 
 - ...
 
+== Building Applications 
 
+For continuous integration, build needs to happen on the command line!
+
+You can build Android applications in a couple of ways... 
+
+- Apache Ant
+
+- Apache Maven
+
+- Gradle
+
+- Any of the above invoked from script
+
+- make for NDK apps, combined with above
+
+- 
+
+- Custom script 
+
+
+
+== Provisioning Android SDK
+
+* via a script E.g. see Android Maven Plugin Samples configuration
+
+* using VM snapshots
+
+* manually (wont scale but possible to get started)
+
+
+
+
+== Testing Applications
+
+On the JVM: 
+
+* Plain unit tests
+
+* Tests with mocked Android classes Robolectric
+
+
+On Dalvik VM / Android
+
+* Integration/Instrumentation tests - Robotium
+
+
+
+== Android Emulator 
+
+One or multiple emulator or attached devices are needed for
+instrumentation testing!
+
+Devices::
+
+* Need access to the hardware or host of VM
+
+* Use a USB Hub
+
+Emulator:: 
+
+* Potentially easier to emulate lots of devices
+
+* With hardware acceleration faster
+
+TIP: Android Maven Plugin can run tests on all attached devices
+
+
+
+== Analysis 
+
+Stephane Nicolas project
+
+Sonar
+
+Checkstyle, PMD... 
+
+== Android Continuous Deployment
+
+Internally:: 
+
+* to a repository manager like Sonatype Nexus 
+
+* QA and other users can access apk via http url
+
+To stores::
+
+* All have a web UI -> you can automate the upload with scripts,
+  e.g. parameterized selenium script
+
+* Ideally stores would have a management API - I talked to the Play
+  Store team at Google IO, they want to get there, we need to push them!
 
 
 == More Links
 
+* http://en.wikipedia.org/wiki/Continuous_integration[Wikipedia article about Continuous Integration]
 
+* http://en.wikipedia.org/wiki/Continuous_delivery[Wikipedia article about Continuous Delivery]
 
 
 == Whats Next? 

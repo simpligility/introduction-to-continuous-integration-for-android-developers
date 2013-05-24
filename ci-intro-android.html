@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Introduction to Continuous Integration for Android Developers</title>
+<title>Introduction to Continuous Integration Server Usage Focusing on Android Development</title>
 <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
 <meta name="copyright" content="Copyright &#169; Copyright 2013, simpligility technologies inc., All Rights Reserved." />
 <meta name="generator" content="AsciiDoc 8.6.8" />
@@ -3868,7 +3868,7 @@ setTimeout(w3c_slidy.hide_slides, 50);
 </head>
 <body class="article" style="max-width:45em">
 <div id="header" class="slide">
-<h1>Introduction to Continuous Integration for Android Developers</h1>
+<h1>Introduction to Continuous Integration Server Usage Focusing on Android Development</h1>
 <span id="author">Manfred Moser, simpligility technologies inc.</span><br />
 </div>
 <div class="sect1 slide">
@@ -3887,7 +3887,7 @@ Author of The Hudson Book
 </li>
 <li>
 <span>
-Open source project manager ksoap2-android, Android Maven Plugin
+Open source project lead ksoap2-android, Android Maven Plugin
 </span>
 </li>
 <li>
@@ -3919,7 +3919,7 @@ Understand the benefits of using a continuous integration servers
 </li>
 <li>
 <span>
-Options for deployment
+Consider the options for deployment
 </span>
 </li>
 <li>
@@ -3929,7 +3929,7 @@ Glance at different available CI servers and services
 </li>
 <li>
 <span>
-Getting started
+Get started
 </span>
 </li>
 <li>
@@ -3943,41 +3943,177 @@ Android specific considerations
 <div class="sect1 slide">
 <h1 id="_what_is_a_ci_server">What is a CI server?</h1>
 <div class="sectionbody" style="max-width:45em">
-<div class="paragraph"><p>Just CRON with a user interface</p></div>
+<div class="quoteblock">
+<div class="content">A CI server is nothing special - it is just CRON with a user interface.</div>
+<div class="attribution">
+&#8212; Anonymous System Administrator
+</div></div>
 </div>
 </div>
 <div class="sect1 slide">
 <h1 id="_what_is_a_ci_server_2">What is a CI server?</h1>
 <div class="sectionbody" style="max-width:45em">
-<div class="paragraph"><p>A relentless worker as another member of your team</p></div>
+<div class="quoteblock">
+<div class="content">A relentless worker as another member of my team, that works for ME!</div>
+<div class="attribution">
+&#8212; Anonymous Developer
+</div></div>
 </div>
 </div>
 <div class="sect1 slide">
 <h1 id="_what_is_a_ci_server_3">What is a CI server?</h1>
 <div class="sectionbody" style="max-width:45em">
-<div class="paragraph"><p>Server running your builds</p></div>
+<div class="quoteblock">
+<div class="content">Just a server running your builds</div>
+<div class="attribution">
+&#8212; Anonymous System Administrator
+</div></div>
 </div>
 </div>
 <div class="sect1 slide">
 <h1 id="_what_is_a_ci_server_4">What is a CI server?</h1>
 <div class="sectionbody" style="max-width:45em">
-<div class="paragraph"><p>A communication tool for the development team and beyond</p></div>
+<div class="quoteblock">
+<div class="content">A great tool saving me from having to run all the tests manually.</div>
+<div class="attribution">
+&#8212; Anonymous QA developer
+</div></div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_what_is_a_ci_server_5">What is a CI server?</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="quoteblock">
+<div class="content">A communication tool for the development and QA teams and beyond.</div>
+<div class="attribution">
+&#8212; Anonymous QA Manager
+</div></div>
 </div>
 </div>
 <div class="sect1 slide">
 <h1 id="_what_is_a_ci_server_really_now">What is a CI server? - really now!</h1>
 <div class="sectionbody" style="max-width:45em">
-<div class="paragraph"><p>Everything I mentioned so far and more!</p></div>
-<div class="paragraph"><p>&#8594; A cenrtral piece of your development infrastructure</p></div>
+<div class="quoteblock">
+<div class="content">Everything mentioned so far and more! A CI
+server/cluster is a central piece of your development
+infrastructure. Once you got used to it, you will never look back.</div>
+<div class="attribution">
+&#8212; Manfred Moser
+</div></div>
 </div>
 </div>
 <div class="sect1 slide">
-<h1 id="_core_features">Core Features</h1>
+<h1 id="_what_is_continuous_integration">What is Continuous Integration?</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>A software development practice that evolved in the
+<a href="http://www.extremeprogramming.org/">Extreme Programming (XP)</a>
+community starting about 1999 and first mentioned by
+Martin Fowler and Kent Beck.</p></div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_what_is_continuous_integration_2">What is Continuous Integration?</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="quoteblock">
+<div class="content">Continuous Integration is a software development practice where
+members of a team integrate their work frequently, usually each person
+integrates at least daily - leading to multiple integrations
+per day. Each integration is verified by an automated build (including
+test) to detect integration errors as quickly as possible. Many teams
+find that this approach leads to significantly reduced integration
+problems and allows a team to develop cohesive software more rapidly.</div>
+<div class="attribution">
+&#8212; Martin Fowler
+</div></div>
+<div class="paragraph"><p>Full article is on
+<a href="http://www.martinfowler.com/articles/continuousIntegration.html">Martin
+Fowlers web site</a></p></div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_practices_of_continuous_integration">Practices of Continuous Integration</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>According to Martin Fowler&#8230;</p></div>
+<ul class="">
+<li>
+<span>
+Maintain a Single Source Repository
+</span>
+</li>
+<li>
+<span>
+Automate the Build
+</span>
+</li>
+<li>
+<span>
+Make Your Build Self-Testing
+</span>
+</li>
+<li>
+<span>
+Everyone Commits to the Mainline Every Day
+</span>
+</li>
+<li>
+<span>
+Every Commit Should Build the Mainline on an Integration Machine
+</span>
+</li>
+<li>
+<span>
+Keep the Build Fast
+</span>
+</li>
+<li>
+<span>
+Test in a Clone of the Production Environment
+</span>
+</li>
+<li>
+<span>
+Make it Easy for Anyone to Get the Latest Executable
+</span>
+</li>
+<li>
+<span>
+Everyone can see what&#8217;s happening
+</span>
+</li>
+<li>
+<span>
+Automate Deployment
+</span>
+</li>
+</ul>
+<div class="paragraph"><p>This should give you a good idea about what to AIM for!</p></div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_continuous_delivery">Continuous Delivery</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>Continuous integration taken to the next level:</p></div>
+<ul class="">
+<li>
+<span>
+software is always in a state suitable for production deployment
+</span>
+</li>
+<li>
+<span>
+and is deployed to production regularly (e.g. daily or more often)
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_core_features_of_continuous_integration_platforms">Core Features of Continuous Integration Platforms</h1>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
 <span>
-version control integration
+version control system integration
 </span>
 </li>
 <li>
@@ -4004,31 +4140,84 @@ expandability
 </div>
 </div>
 <div class="sect1 slide">
-<h1 id="_deployment_options_one_or_many">Deployment Options - One or Many?</h1>
+<h1 id="_benefits">Benefits</h1>
 <div class="sectionbody" style="max-width:45em">
 <ul class="">
 <li>
 <span>
-One server
+Reduces the need for developers and others to manually build
+  software
 </span>
 </li>
 <li>
 <span>
-Cluster
+Reduces the risk of integrating features, since it is done all the
+  time (no more release deadline crunch!)
+</span>
+</li>
+<li>
+<span>
+Automates and codifies how software is built
+</span>
+</li>
+<li>
+<span>
+Enhances visibility and communication in development, QA and beyond
+</span>
+</li>
+<li>
+<span>
+Reduces the number of defects and raises quality of your software
 </span>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect1 slide">
-<h1 id="_deployment_options_hardware_or_vm">Deployment Options - Hardware or VM?</h1>
+<h1 id="_deployment_options_operating_systems">Deployment Options - Operating Systems?</h1>
 <div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>For Android development you have many options, but ..</p></div>
+<ul class="">
+<li>
+<span>
+Are you also building IOS apps?
+</span>
+</li>
+<li>
+<span>
+Is production running on Linux?
+</span>
+</li>
+<li>
+<span>
+Do you need to verify it works on Windows?
+</span>
+</li>
+</ul>
+<div class="paragraph"><p>&#8594; you might have to use different ones</p></div>
 </div>
 </div>
 <div class="sect1 slide">
-<h1 id="_deployment_options_operating_systems">Deployment Options - Operating Systems?</h1>
+<h1 id="_deployment_options_one_or_many">Deployment Options - One or Many?</h1>
 <div class="sectionbody" style="max-width:45em">
-<div class="paragraph"><p>-</p></div>
+<ul class="">
+<li>
+<span>
+One large server
+</span>
+</li>
+<li>
+<span>
+Cluster of one server with multiple smaller slaves
+</span>
+</li>
+</ul>
+<div class="paragraph"><p>&#8594; In most enterprises one server will not be sufficient</p></div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_deployment_options_hardware_or_vm">Deployment Options - Hardware or VM?</h1>
+<div class="sectionbody" style="max-width:45em">
 </div>
 </div>
 <div class="sect1 slide">
@@ -4490,6 +4679,343 @@ Backed by Cloudbees
 <div class="sect1 slide">
 <h1 id="_travis_ci">Travis CI</h1>
 <div class="sectionbody" style="max-width:45em">
+<div class="imageblock">
+<div class="content">
+<img alt="images/travis.png" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAiAAAAENCAYAAAA2U95pAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ
+bWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdp
+bj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6
+eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEz
+NDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJo
+dHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlw
+dGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEu
+MC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVz
+b3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1N
+Ok9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpDOEQ1MkM4REZGMjI2ODExOTJCMDg0NERFRTRC
+NUVFQSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxRUVBMjc4MTQzN0MxMUUxQUJFRDhGMzI1
+MTlFNkIwMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxRUVBMjc4MDQzN0MxMUUxQUJFRDhG
+MzI1MTlFNkIwMyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9z
+aCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkM5RDUyQzhE
+RkYyMjY4MTE5MkIwODQ0REVFNEI1RUVBIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkM4RDUy
+QzhERkYyMjY4MTE5MkIwODQ0REVFNEI1RUVBIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpS
+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
+IDZmAAAAAElFTkSuQmCC" />
+</div>
+</div>
 <div class="paragraph"><p><a href="https://travis-ci.org">https://travis-ci.org</a></p></div>
 <ul class="">
 <li>
@@ -4538,8 +5064,260 @@ MS TFS
 </div>
 </div>
 <div class="sect1 slide">
+<h1 id="_building_applications">Building Applications</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>For continuous integration, build needs to happen on the command line!</p></div>
+<div class="paragraph"><p>You can build Android applications in a couple of ways&#8230;</p></div>
+<ul class="">
+<li>
+<span>
+Apache Ant
+</span>
+</li>
+<li>
+<span>
+Apache Maven
+</span>
+</li>
+<li>
+<span>
+Gradle
+</span>
+</li>
+<li>
+<span>
+Any of the above invoked from script
+</span>
+</li>
+<li>
+<span>
+make for NDK apps, combined with above
+</span>
+</li>
+</ul>
+<div class="paragraph"><p>-</p></div>
+<ul class="">
+<li>
+<span>
+Custom script
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_provisioning_android_sdk">Provisioning Android SDK</h1>
+<div class="sectionbody" style="max-width:45em">
+<ul class="">
+<li>
+<span>
+via a script E.g. see Android Maven Plugin Samples configuration
+</span>
+</li>
+<li>
+<span>
+using VM snapshots
+</span>
+</li>
+<li>
+<span>
+manually (wont scale but possible to get started)
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_testing_applications">Testing Applications</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>On the JVM:</p></div>
+<ul class="">
+<li>
+<span>
+Plain unit tests
+</span>
+</li>
+<li>
+<span>
+Tests with mocked Android classes Robolectric
+</span>
+</li>
+</ul>
+<div class="paragraph"><p>On Dalvik VM / Android</p></div>
+<ul class="">
+<li>
+<span>
+Integration/Instrumentation tests - Robotium
+</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_android_emulator">Android Emulator</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>One or multiple emulator or attached devices are needed for
+instrumentation testing!</p></div>
+<div class="dlist"><dl class="">
+<dt class="hdlist1">
+Devices
+</dt>
+<dd>
+<ul class="">
+<li>
+<span>
+Need access to the hardware or host of VM
+</span>
+</li>
+<li>
+<span>
+Use a USB Hub
+</span>
+</li>
+</ul>
+</dd>
+<dt class="hdlist1">
+Emulator
+</dt>
+<dd>
+<ul class="">
+<li>
+<span>
+Potentially easier to emulate lots of devices
+</span>
+</li>
+<li>
+<span>
+With hardware acceleration faster
+</span>
+</li>
+</ul>
+</dd>
+</dl></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Tip" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">Android Maven Plugin can run tests on all attached devices</td>
+</tr></table>
+</div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_analysis">Analysis</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="paragraph"><p>Stephane Nicolas project</p></div>
+<div class="paragraph"><p>Sonar</p></div>
+<div class="paragraph"><p>Checkstyle, PMD&#8230;</p></div>
+</div>
+</div>
+<div class="sect1 slide">
+<h1 id="_android_continuous_deployment">Android Continuous Deployment</h1>
+<div class="sectionbody" style="max-width:45em">
+<div class="dlist"><dl class="">
+<dt class="hdlist1">
+Internally
+</dt>
+<dd>
+<ul class="">
+<li>
+<span>
+to a repository manager like Sonatype Nexus
+</span>
+</li>
+<li>
+<span>
+QA and other users can access apk via http url
+</span>
+</li>
+</ul>
+</dd>
+<dt class="hdlist1">
+To stores
+</dt>
+<dd>
+<ul class="">
+<li>
+<span>
+All have a web UI &#8594; you can automate the upload with scripts,
+  e.g. parameterized selenium script
+</span>
+</li>
+<li>
+<span>
+Ideally stores would have a management API - I talked to the Play
+  Store team at Google IO, they want to get there, we need to push them!
+</span>
+</li>
+</ul>
+</dd>
+</dl></div>
+</div>
+</div>
+<div class="sect1 slide">
 <h1 id="_more_links">More Links</h1>
 <div class="sectionbody" style="max-width:45em">
+<ul class="">
+<li>
+<span>
+<a href="http://en.wikipedia.org/wiki/Continuous_integration">Wikipedia article about Continuous Integration</a>
+</span>
+</li>
+<li>
+<span>
+<a href="http://en.wikipedia.org/wiki/Continuous_delivery">Wikipedia article about Continuous Delivery</a>
+</span>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect1 slide">
