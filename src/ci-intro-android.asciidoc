@@ -6,8 +6,7 @@
 :icons:
 :toc!:
 :slidetitleindentcar: 
-:copyright: Copyright 2013, simpligility technologies inc., All Rights Reserved.
-
+:copyright: 2013, simpligility technologies inc., CreativeCommons Attribution-ShareAlike 3.0 Unported(http://creativecommons.org/licenses/by-sa/3.0/)
 
 == About Manfred Moser
 
@@ -23,6 +22,16 @@
 
 * Owner http://www.simpligility.com[simpligility technologies inc.]
 
+== Slides and Source
+
+Source and slides::
+
+https://github.com/simpligility/introduction-to-continuous-integration-for-android-developers
+
+Slides only::
+
+http://www.simpligility.com/document/ci-intro-android.html
+
 == Objectives
 
 * Understand the benefits of using a continuous integration
@@ -35,6 +44,7 @@
 
 * Android specific considerations
 
+TIP: Please interrupt me and ask questions - this should be an open conversation!
 
 == What is a CI server? 
 
@@ -421,6 +431,10 @@ e.g. http://testdroid.com/[TestDroid from Bitbar]
 
 
 https://github.com/square/spoon
+
+https://github.com/DominikDary/selendroid
+
+https://github.com/appium/appium
 
 
 
