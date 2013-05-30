@@ -229,7 +229,7 @@ Virtual Machines::
 
 How do I get all the tools needed to all the CI servers? 
 
-* Tools built into CI servers (e.g. Maven download install in Hudson)
+* Tools built into CI servers (e.g. Maven download/install in Hudson)
 
 * VM's and VM snapshots
 
@@ -247,89 +247,113 @@ How do I get all the tools needed to all the CI servers?
 
 == Deployment Options - Scalability?
 
-on demand start up of VM
+You can just throw more hardware at it...
 
+Or do things dynamically: 
 
+* using desktop computers as slaves at night when not used
 
+* on demand start up of VM
+
+* automatic provisioning of new VM
 
 == Deployment Options
 
-- computer under the desk in local network
+* computer under the desk in local network
 
-- VM 
+* hardware in datacenter
 
-- VM in Cloud
+* VM 
 
-- Mixture of 
+* VM in Cloud
+
+* Mixture of it all
 
 
 == Different CI Servers
 
 Lots of them available
 
-- open source
+* open source
 
-- commercial
+* commercial
 
-- SAAS
+* SAAS
 
+* and combinations of the above
 
 == Eclipse Hudson
 
-image::hudson.png[scale=100]
+[width="100%",frame="none",grid="none",halign="left",valign="center",cols="1,3"]
+|=======
+| image:hudson.png[scale=100] | http://www.hudson-ci.org
+|=======
 
-http://www.hudson-ci.org
+* Top level project of the Eclipse Foundation
 
-- Top level project of the Eclipse Foundation
+* Backed by Oracle and used in their cloud offering
 
-- Backed by Oracle and used in their cloud offering
-
-- Open source under the Eclipse Public License
+* Open source under the Eclipse Public License
 
 
 == Jenkins
 
-image::jenkins.png[scale=100]
 
-http://www.jenkins-ci.org
+[width="100%",frame="none",grid="none",halign="left",valign="center",cols="1,3"]
+|=======
+| image:jenkins.png[scale=100] | http://www.jenkins-ci.org
+|=======
 
-- Open source and commercial version
+* Open source and commercial version
 
-- Backed by Cloudbees
+* Backed by Cloudbees
 
-- 
+* Open source, commercial and Saas
+
+* Large, active community 
+
+* Lots of plugins
 
 == Travis CI
 
-image::travis.png[scale=100]
+[width="100%",frame="none",grid="none",halign="left",valign="center",cols="1,3"]
+|=======
+| image:travis.png[scale="70"] | http://www.travis-ci.org
+|=======
 
-https://travis-ci.org
+* Saas
 
-- SAAS
+* Great github integraton
 
-- Great github integraton
+* Free for open source projects 
 
-== Others CI Servers
+* Pro version for private repositories
 
-image::bamboo.png[scale=100]
+== Atlassian Bamboo
 
-* http://www.atlassian.com/software/bamboo/overview[Atlassian Bamboo]
+[width="100%",frame="none",grid="none",halign="left",valign="center",cols="1,3"]
+|=======
+| image:bamboo.png[scale=100] |  http://www.atlassian.com/software/bamboo
+|=======
 
-** great integration with other Atlassian products like JIRA
+* great integration with other Atlassian products like JIRA
 
-** good Amazon EC 2 support 
+* good Amazon EC 2 support 
 
-** self hosted or SAAS available
+* self hosted or SAAS available
 
-image::teamcity.png[scale=100]
+== JetBrains TeamCity
 
-* http://www.jetbrains.com/teamcity/[JetBrains TeamCity]
+[width="100%",frame="none",grid="none",halign="left",valign="center",cols="1,3"]
+|=======
+| image:teamcity.png[scale=100] |  http://www.jetbrains.com/teamcity
+|=======
 
-** from the makers of IntelliJ IDEA/Android Studio 
+* from the makers of IntelliJ IDEA/Android Studio 
 
-** integration with YouTrack
+* integration with YouTrack
 
-** free for up to 20 builds 
+* free for up to 20 builds 
 
 == Others CI Servers - continued
 
@@ -340,7 +364,7 @@ image::teamcity.png[scale=100]
 
 * http://cruisecontrol.sourceforge.net/[Cruise Control]
 
-** old and outdated
+** old and outdated, don't use it anymore
 
 * http://www.thoughtworks-studios.com/go-continuous-delivery[ThoughWorks
   Go]
@@ -373,17 +397,17 @@ For continuous integration, build needs to happen on the command line!
 
 You can build Android applications in a couple of ways... 
 
-- Apache Ant
+* Apache Ant - but the Android Ant build is deprecated
 
-- Apache Maven
+* Apache Maven
 
-- Gradle
+* Gradle
 
-- Any of the above invoked from script
+* Any of the above invoked from script
 
-- make for NDK apps, combined with above
+* make for NDK apps, combined with above
 
-- Custom script 
+* Custom script 
 
 WARNING: Be careful not to rely too much on the configuration in a
 specific CI server, that makes switching CI platform and running builds on other
@@ -391,14 +415,58 @@ machines more difficult.
 
 == Provisioning Android SDK
 
-* via a script E.g. see Android Maven Plugin Samples configuration
+* via a script e.g. see https://github.com/jayway/maven-android-plugin-samples/blob/master/.travis.yml[Android Maven Plugin Samples] configuration
 
 * using VM snapshots
 
 * manually (wont scale but possible to get started)
 
 
+== Provisioning Android SDK 
 
+From travis file suitable for Linux
+
+====
+wget http://dl.google.com/android/android-sdk_r21.1-linux.tgz
+tar xzf android-sdk_r21.1-linux.tgz
+export ANDROID_HOME=$PWD/android-sdk-linux
+export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
+====
+
+== Provisioning Android NDK 
+
+From travis file suitable for Linux
+
+====
+wget http://dl.google.com/android/ndk/android-ndk-r8e-linux-x86${NDK_ARCH}.tar.bz2
+tar xjf android-ndk-r8e-linux-x86${NDK_ARCH}.tar.bz2
+export ANDROID_NDK_HOME=$PWD/android-ndk-r8e
+====
+
+
+== Getting Android Platforms and Extras
+
+From travis file suitable for Linux
+
+====
+android update sdk --filter platform-tools,android-16,extra-android-support,$ANDROID_SDKS --no-ui --force > /dev/null
+====
+
+TIP: Finding the right filter for different tools is painful.
+
+
+== Creating and starting emulator
+
+With a script
+
+====
+echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
+emulator -avd test -no-skin -no-audio -no-window &
+====
+
+You can also have them be a part of your VM image.
+
+TIP: Or you can use the Jenkins Android Emulator Plugin...
 
 == Testing Applications
 
