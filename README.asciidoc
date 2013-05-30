@@ -36,12 +36,16 @@ ensure that you learn many of the best practices of CI server usage in
 general and specifically related to Android application development,
 and walk away with a firm conviction to add a CI server to your team.
 
-=== Tips for using
+=== Slides and Source
 
-The html file in the root folder is all you need to show the
-presentation.
+Source and slides::
 
-Just download the repo with git clone or as zip/tar.gz
+https://github.com/simpligility/introduction-to-continuous-integration-for-android-developers
+
+Slides only::
+
+http://www.simpligility.com/document/ci-intro-android.html
+
 
 === Modifications
 
