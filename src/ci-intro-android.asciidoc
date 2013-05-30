@@ -233,7 +233,7 @@ How do I get all the tools needed to all the CI servers?
 
 * VM's and VM snapshots
 
-* Provisioning systems like https://puppetlabs.com/[Puppet] , 
+* Provisioning systems like https://puppetlabs.com/[puppet] , 
   http://www.opscode.com/chef/[Chef] or http://cfengine.com/[CFEngine]
 
 * Package management system of operating system directly (apt-get, yum...)
@@ -380,7 +380,7 @@ under the Application Lifecycle Management ALM term
 
 == How to Select Your CI Server Platform
 
-* consider your needs beyond Android application
+* consider your needs beyond Android application builds
 
 * try them out, most have open source or free trial or community
   editions
@@ -426,43 +426,49 @@ machines more difficult.
 
 From travis file suitable for Linux
 
-====
+----
 wget http://dl.google.com/android/android-sdk_r21.1-linux.tgz
 tar xzf android-sdk_r21.1-linux.tgz
 export ANDROID_HOME=$PWD/android-sdk-linux
 export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
-====
+----
 
 == Provisioning Android NDK 
 
 From travis file suitable for Linux
 
-====
+----
+NDK_ARCH=""
+if [ `uname -m` = x86_64 ]; then NDK_ARCH=_64; fi
 wget http://dl.google.com/android/ndk/android-ndk-r8e-linux-x86${NDK_ARCH}.tar.bz2
 tar xjf android-ndk-r8e-linux-x86${NDK_ARCH}.tar.bz2
 export ANDROID_NDK_HOME=$PWD/android-ndk-r8e
-====
+----
 
 
 == Getting Android Platforms and Extras
 
 From travis file suitable for Linux
 
-====
-android update sdk --filter platform-tools,android-16,extra-android-support,$ANDROID_SDKS --no-ui --force > /dev/null
-====
+----
+android update sdk 
+   --filter platform-tools,android-16,extra-android-support,sysimg-16
+   --no-ui --force > /dev/null
+----
 
-TIP: Finding the right filter for different tools is painful.
+Finding the right filter for different tools is painful. 
+
+IMPORTANT: Google is planning on blocking this due to legal reasons
 
 
 == Creating and starting emulator
 
 With a script
 
-====
-echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
+----
+echo no | android create avd --force -n test -t android-16 --abi x86
 emulator -avd test -no-skin -no-audio -no-window &
-====
+----
 
 You can also have them be a part of your VM image.
 
@@ -474,12 +480,12 @@ On the JVM::
 
 * Plain unit tests
 
-* Tests with mocked Android classes Robolectric
+* Tests with mocked Android classes
 
 
 On Dalvik VM / Android::
 
-* Integration/Instrumentation tests - Robotium
+* Integration/Instrumentation tests
 
 
 SDK Tools::
@@ -496,11 +502,20 @@ NOTE: There are dedicated in the cloud test setups available,
 e.g. http://testdroid.com/[TestDroid from Bitbar]
 
 
-https://github.com/square/spoon
+== Android Testing Tools Beyond SDK
 
-https://github.com/DominikDary/selendroid
+* http://www.robotium.org[Robotium]
 
-https://github.com/appium/appium
+* http://robolectric.org/[Robolectric]
+
+* https://github.com/square/spoon[Spoon]
+
+* https://github.com/DominikDary/selendroid[Selendroid]
+
+* https://github.com/appium/appium[Appium]
+
+* http://square.github.io/fest-android/[FEST Android]
+* many more...
 
 
 
@@ -604,18 +619,29 @@ suitable to your users!
 
 * Appaloosa Plugin
 
-
 == More Links
 
 * http://en.wikipedia.org/wiki/Continuous_integration[Wikipedia article about Continuous Integration]
 
-* http://en.wikipedia.org/wiki/Continuous_delivery[Wikipedia article about Continuous Delivery]
+* http://en.wikipedia.org/wiki/Continuous_delivery[Wikipedia article
+  about Continuous Delivery]
+
+== Demo Time
+
+* Start-up scripts
+
+* Jenkins and Hudson locally
+
+* Travis
+
+* Project setup, notifications and so on 
+
+TIP: What else do you want to see?
 
 == Summary
 
-Continuous integration usage is easy and essential!
-
-Get on with it!
+[quote,Manfred Moser] 
+Continuous integration usage is easy and essential! Get on with it!
 
 == The End
 
