@@ -6,6 +6,7 @@
 :icons:
 :toc!:
 :slidetitleindentcar: 
+:imagesdir: images
 :copyright: 2013, simpligility technologies inc., CreativeCommons Attribution-ShareAlike 3.0 Unported(http://creativecommons.org/licenses/by-sa/3.0/)
 
 == About Manfred Moser
@@ -173,8 +174,7 @@ Continuous integration taken to the next level::
 == Use Cases Beyond Software Builds
 
 
-There are a *lot* of different use cases for CI platforms beyond
-build software applications, so expandability is key! 
+There are a *lot* of different use cases ->  expandability is key! 
 
 * building and publishing a book or a website
 
@@ -182,6 +182,9 @@ build software applications, so expandability is key!
 
 * running backups
 
+* analysis runs of e.g. log files
+
+* batch runs on some server backend or database
 
 == Deployment Options - Operating Systems? 
 
@@ -213,7 +216,7 @@ Hardware::
 
 * sort of required for some build (e.g. iOS)
 
-VM::
+Virtual Machines::
 
 * easy to start and stop
 
@@ -237,15 +240,10 @@ How do I get all the tools needed to all the CI servers?
 
 - Manual install on each machine .. painful after a while
 
-
-image::images/puppet.png[scale=100]
-
-
-image::images/chef.png[scale=100]
-
-
-image::images/cfengine.png[scale=100]
-
+[width="100%",frame="none",grid="none",halign="center",valign="center"]
+|=======
+| image:puppet.png[scale=100] | image:chef.png[scale=100] | image:cfengine.png[scale=100]
+|=======
 
 == Deployment Options - Scalability?
 
@@ -278,7 +276,7 @@ Lots of them available
 
 == Eclipse Hudson
 
-image::images/hudson.png[scale=100]
+image::hudson.png[scale=100]
 
 http://www.hudson-ci.org
 
@@ -291,7 +289,7 @@ http://www.hudson-ci.org
 
 == Jenkins
 
-image::images/jenkins.png[scale=100]
+image::jenkins.png[scale=100]
 
 http://www.jenkins-ci.org
 
@@ -303,7 +301,7 @@ http://www.jenkins-ci.org
 
 == Travis CI
 
-image::images/travis.png[scale=100]
+image::travis.png[scale=100]
 
 https://travis-ci.org
 
@@ -313,7 +311,7 @@ https://travis-ci.org
 
 == Others CI Servers
 
-image::images/bamboo.png[scale=100]
+image::bamboo.png[scale=100]
 
 * http://www.atlassian.com/software/bamboo/overview[Atlassian Bamboo]
 
@@ -323,7 +321,7 @@ image::images/bamboo.png[scale=100]
 
 ** self hosted or SAAS available
 
-image::images/teamcity.png[scale=100]
+image::teamcity.png[scale=100]
 
 * http://www.jetbrains.com/teamcity/[JetBrains TeamCity]
 
@@ -501,6 +499,8 @@ Execute lint with
 
 * dedicated goal in Android Maven Plugin
 
+* Android Lint Plugin for Jenkins
+
 and then
 
 * archive the reports per build
@@ -526,6 +526,17 @@ To stores::
 WARNING: I strongly recommend to adapt the frequency of deployments
 suitable to your users!
 
+== Other Jenkins Plugins
+
+* HockeyApp Plugin for Jenkins - to publish app
+
+* Zubhium Plugin for Jenkins
+
+* GCM Notification Plugin
+
+* Appaloosa Plugin
+
+
 == More Links
 
 * http://en.wikipedia.org/wiki/Continuous_integration[Wikipedia article about Continuous Integration]
@@ -537,3 +548,11 @@ suitable to your users!
 Continuous integration usage is easy and essential!
 
 Get on with it!
+
+== The End
+
+* Q & A
+
+* Discussion
+
+* Find me at http://www.simpligility.com
